@@ -56,10 +56,12 @@ plt.savefig('./_qc')
 
 ```python
 import matplotlib.pyplot as plt
-fig = plt.figure(figsize=(12,8))
+fig = plt.figure(figsize=(10,6))
 plt.subplot(1,2,1)
-plt.imshow(outputs.get_array()[0,0,:,:,100], cmap='gray')
+plt.title('output', fontsize=15)
+plt.imshow(outputs.get_array()[0,0,0,:,:], cmap='gray')
 plt.subplot(1,2,2)
-plt.imshow(outputs_recon.get_array()[0,0,:,:,100], cmap='gray')
+plt.title('output recon', fontsize=15)
+plt.imshow(outputs_recon.get_array()[0,0,0,:,:], cmap='gray')
 plt.savefig('./_qc')
 ```
