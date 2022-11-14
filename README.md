@@ -1,4 +1,18 @@
 ```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(20,6))
+plt.subplot(1,3,1)
+plt.imshow(data_dict[0]['image'].get_array()[0,30, :,:], cmap='gray')
+plt.subplot(1,3,2)
+plt.imshow(data_dict[0]['label'].get_array()[0,30, :,:], cmap='gray')
+plt.subplot(1,3,3)
+plt.imshow(data_dict[0]['pseudo_artery'].get_array()[0,30, :,:], cmap='gray')
+plt.savefig('./_qcqcqc')
+
+
+```
+
+```python
 # hiera2 check
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
