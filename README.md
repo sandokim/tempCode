@@ -2,6 +2,17 @@
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
 plt.subplot(1,3,1)
+plt.imshow(ori_targets[0,2,:,:,:].sum(axis=1).cpu(), cmap='hot')
+plt.subplot(1,3,2)
+final_output[final_output!=2]=0
+plt.imshow(final_output.sum(axis=1).cpu(), cmap='hot')
+plt.savefig('./_qcqcqc')
+```
+
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(20,6))
+plt.subplot(1,3,1)
 plt.imshow(data_dict[0]['image'].get_array()[0,30, :,:], cmap='gray')
 plt.subplot(1,3,2)
 plt.imshow(data_dict[0]['label'].get_array()[0,30, :,:], cmap='gray')
