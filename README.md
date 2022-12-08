@@ -1,6 +1,24 @@
 ```python
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
+plt.subplot(1,4,1)
+plt.title('Label')
+plt.imshow(label[:,:,:,1].sum(axis=0), cmap='hot')
+plt.subplot(1,4,2)
+plt.title('Prediction')
+plt.imshow(mask3d[:,:,:,1].sum(axis=0), cmap='hot')
+plt.subplot(1,4,3)
+plt.imshow(dilated1[:,:,:].sum(axis=0), cmap='hot')
+plt.title('Prediction_dilation')
+plt.subplot(1,4,4)
+plt.title('Prediction_dilation_erosion')
+plt.imshow(dilated_erosion1[:,:,:].sum(axis=0), cmap='hot')
+plt.savefig('./_qcqcqc')
+```
+
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(20,6))
 plt.subplot(1,3,1)
 plt.imshow(ori_targets[0,2,:,:,:].sum(axis=1).cpu(), cmap='hot')
 plt.subplot(1,3,2)
