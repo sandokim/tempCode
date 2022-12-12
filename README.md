@@ -1,14 +1,16 @@
 ```python
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
-plt.subplot(1,2,1)
+plt.subplot(1,3,1)
+plt.title('input')
+plt.imshow(inputs[1,0,:,:].cpu().detach().numpy(),cmap='gray')
+plt.subplot(1,3,2)
 plt.title('output')
 plt.imshow(outputs[1,1,:,:].cpu().detach().numpy(),cmap='gray')
-plt.subplot(1,2,2)
+plt.subplot(1,3,3)
 plt.title('label')
 plt.imshow(targets[1,1,:,:].cpu().detach().numpy(), cmap='gray')
 plt.savefig('./_qcqcqc')
-
 np.unique(outputs.cpu().detach().numpy())
 ```
 ```python
