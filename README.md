@@ -1,6 +1,18 @@
 ```python
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
+plt.subplot(1,2,1)
+plt.title('input')
+plt.imshow(MRI_T1[0,:,:].detach().numpy(),cmap='hot')
+plt.subplot(1,2,2)
+plt.title('label')
+plt.imshow(Mask[0,:,:].detach().numpy(), cmap='hot')
+plt.savefig('./_qcqcqc')
+```
+
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(20,6))
 plt.subplot(1,4,1)
 plt.title('Label')
 plt.imshow(label[:,:,:,1].sum(axis=0), cmap='hot')
