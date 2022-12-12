@@ -8,6 +8,8 @@ plt.subplot(1,2,2)
 plt.title('label')
 plt.imshow(targets[1,1,:,:].cpu().detach().numpy(), cmap='gray')
 plt.savefig('./_qcqcqc')
+
+np.unique(outputs.cpu().detach().numpy())
 ```
 ```python
 import matplotlib.pyplot as plt
