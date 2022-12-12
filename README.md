@@ -2,6 +2,17 @@
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
 plt.subplot(1,2,1)
+plt.title('output')
+plt.imshow(outputs[1,1,:,:].cpu().detach().numpy(),cmap='gray')
+plt.subplot(1,2,2)
+plt.title('label')
+plt.imshow(targets[1,1,:,:].cpu().detach().numpy(), cmap='gray')
+plt.savefig('./_qcqcqc')
+```
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(20,6))
+plt.subplot(1,2,1)
 plt.title('input')
 plt.imshow(MRI_T1[0,:,:].detach().numpy(),cmap='hot')
 plt.subplot(1,2,2)
