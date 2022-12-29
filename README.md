@@ -1,4 +1,15 @@
 ```python
+import imageio
+import matplotlib.pyplot as plt
+fig, axis = plt.subplots(1, 10, figsize=(30,300))
+for i in range(10):
+  _frame = _frames[i]
+  _fname = os.path.join(_datadir, _fname['file_path'] + '.png')
+  img = imageio.imread(_fname)
+  axis[i].imshow(img)
+```
+
+```python
 import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(20,6))
 plt.subplot(1,3,1)
