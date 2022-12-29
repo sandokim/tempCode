@@ -1,5 +1,7 @@
 ```python
 # 카메라 프레임별 확인
+import random
+random.shuffle(_fnames)
 import imageio
 import matplotlib.pyplot as plt
 fig, axis = plt.subplots(1, 10, figsize=(30,300))
