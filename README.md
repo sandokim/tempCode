@@ -1,4 +1,5 @@
 ```python
+# NeRF
 # 카메라 프레임별 확인
 import random
 random.shuffle(_fnames)
@@ -10,6 +11,17 @@ for i in range(10):
   _fname = os.path.join(_datadir, _fname['file_path'] + '.png')
   img = imageio.imread(_fname)
   axis[i].imshow(img)
+  
+# imageio가 0부터 255사이의 integer값으로 구성이 되어있다. 255로 나눠서 0~1사이로 casting을 한다.
+imgs = (np.array(imgs) / 255.).astype(np.float32)
+print(imgs.shape) # (800, 800, 4)
+
+imgs_orig = imgs[...,:3] # 앞의 3개 channel만 지정
+imgs_mask = imgs[...,-1]
+
+fig, axis = plt.subplots(1,2)
+axis[0].imshow(imgs_orig[0])
+axis[1].imshow(imgs_mask[0], cmap = 'gray')
 ```
 
 ```python
