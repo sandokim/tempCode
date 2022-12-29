@@ -18,10 +18,12 @@ print(imgs.shape) # (800, 800, 4)
 
 imgs_orig = imgs[...,:3] # 앞의 3개 channel만 지정
 imgs_mask = imgs[...,-1]
+imgs = imgs[...<:3]*imgs[...,-1:] + (1-imgs[...,-1:])
 
-fig, axis = plt.subplots(1,2)
+fig, axis = plt.subplots(1,3)
 axis[0].imshow(imgs_orig[0])
 axis[1].imshow(imgs_mask[0], cmap = 'gray')
+axis[2].imshow(imgs[0])
 ```
 
 ```python
