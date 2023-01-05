@@ -1,4 +1,5 @@
 ```python
+import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(10,6))
 plt.subplot(1,3,1)
 plt.title('input', fontsize=15)
