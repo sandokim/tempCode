@@ -3,14 +3,18 @@ import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(10,6))
 plt.subplot(1,3,1)
 plt.title('input', fontsize=15)
-plt.imshow(img_npy[0,0,:,:], cmap='gray')
+plt.imshow(img_npy[0,160,:,:], cmap='gray')
 plt.subplot(1,3,2)
 plt.title('seg_npy', fontsize=15)
-plt.imshow(seg_npy_onehot[0,0,:,:], cmap='gray')
+plt.imshow(seg_npy_onehot[0,160,:,:], cmap='gray')
 plt.subplot(1,3,3)
 plt.title('est', fontsize=15)
-plt.imshow(est_npy[0,0,:,:], cmap='gray')
+plt.imshow(est_npy[0,160,:,:], cmap='gray')
 plt.savefig('./_qc')
+
+import numpy as np
+print(np.unique(est_npy))
+
 ```
 
 ```python
