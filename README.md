@@ -3,6 +3,15 @@ import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(10,6))
 plt.subplot(1,3,1)
 plt.title('input', fontsize=15)
+plt.imshow(prediction_npy[160,:,:], cmap='gray')
+plt.savefig('./_qcqc')
+```
+
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(10,6))
+plt.subplot(1,3,1)
+plt.title('input', fontsize=15)
 plt.imshow(img_npy[0,160,:,:], cmap='gray')
 plt.subplot(1,3,2)
 plt.title('seg_npy', fontsize=15)
